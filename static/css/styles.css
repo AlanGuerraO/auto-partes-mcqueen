@@ -1,0 +1,305 @@
+/* Variables Globales */
+:root {
+    --mcqueen-red: #B3303E;          /* Rojo más oscuro y menos saturado */
+    --mcqueen-yellow: #C6A15B;       /* Amarillo dorado apagado */
+    --mcqueen-black: #2E2E2E;        /* Negro grisáceo para menos contraste */
+    --mcqueen-white: #F0F0F0;        /* Blanco ligeramente gris */
+    --mcqueen-gray: #E0E0E0;         /* Gris claro y neutro */
+    --mcqueen-shadow: rgba(0, 0, 0, 0.15);
+    --mcqueen-deep-shadow: rgba(0, 0, 0, 0.35);
+    --rust-eze-orange: #C75A00;      /* Naranja oscuro y suave */
+    --dinoco-blue: #3B6BA5;          /* Azul más sobrio y profundo */
+
+    --primary-color: var(--mcqueen-red);
+    --secondary-color: var(--mcqueen-yellow);
+    --accent-color: var(--dinoco-blue);
+    --background-color: var(--mcqueen-gray);
+    --text-color: var(--mcqueen-black);
+}
+
+/* Reset y Base */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    min-height: 100vh;
+    scroll-behavior: smooth;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex-grow: 1;
+    padding: 2rem 0;
+}
+
+.container {
+    width: 100%;
+    padding-inline: 1rem;
+    margin-inline: auto;
+}
+
+/* Títulos y encabezados */
+.section-title {
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    position: relative;
+    padding-bottom: 20px;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: var(--primary-color);
+}
+
+.subsection-title {
+    color: var(--text-color);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Navbar */
+.navbar {
+    background-color: var(--mcqueen-black);
+    padding-block: 1rem;
+    box-shadow: 0 4px 12px var(--mcqueen-shadow);
+    border-bottom: 3px solid var(--primary-color);
+}
+
+.navbar-brand {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: var(--mcqueen-white);
+    text-transform: uppercase;
+}
+
+.navbar-dark .nav-link {
+    color: var(--mcqueen-white);
+    font-weight: 500;
+    margin-inline: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.navbar-dark .nav-link:hover {
+    color: var(--secondary-color);
+    text-shadow: 0 0 5px var(--secondary-color);
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(40, 40, 40, 0.5)),
+        url('../img/mcqueen-banner.jpg') center/cover no-repeat;
+    padding: 4rem 1rem;
+    color: var(--mcqueen-white);
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 25px var(--mcqueen-shadow);
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.hero-icon {
+    width: 70px;
+    height: 70px;
+    background: var(--mcqueen-white);
+    color: var(--primary-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    font-size: 1.75rem;
+    box-shadow: 0 5px 15px var(--mcqueen-shadow);
+}
+
+.hero-content h1 {
+    font-size: 2.8rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+    text-shadow: 2px 2px 4px var(--mcqueen-deep-shadow);
+}
+
+.hero-content .lead {
+    font-size: 1.2rem;
+    color: var(--mcqueen-gray);
+    text-shadow: 1px 1px 2px var(--mcqueen-shadow);
+}
+
+/* Cards */
+.categoria-card {
+    background: var(--mcqueen-white);
+    border-radius: 20px;
+    padding: 2rem;
+    height: 100%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 5px 15px var(--mcqueen-shadow);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.categoria-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.categoria-icon-wrapper {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.categoria-icon {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--primary-color) 0%, #a02e38 100%);
+    color: var(--mcqueen-white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    box-shadow: 0 5px 15px var(--mcqueen-shadow);
+}
+
+.categoria-card h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+.categoria-card p {
+    color: #444;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+
+/* Tips  */
+.tip-card {
+    background: var(--mcqueen-white);
+    border-radius: 20px;
+    padding: 1.5rem 0.5rem;
+    height: 100%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 5px 15px var(--mcqueen-shadow);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.tip-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.tip-icon-wrapper {
+    width: 90px;
+    height: 90px;
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.tip-icon {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--primary-color) 0%, #a02e38 100%);
+    color: var(--mcqueen-white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    box-shadow: 0 5px 15px var(--mcqueen-shadow);
+}
+
+.tip-card h4 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.tip-card p {
+    color: #444;
+    flex-grow: 1;
+    margin-bottom: 0;
+}
+
+/* Buttons */
+.btn {
+    padding: 0.8rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+    background: #8c2730;
+    border-color: #8c2730;
+    transform: translateY(-2px);
+}
+
+.btn-outline-primary {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-outline-primary:hover {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+.btn-sm {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+}
+
+/* Footer */
+footer {
+    background-color: var(--mcqueen-black);
+    color: var(--mcqueen-white);
+    padding: 3rem 0;
+    text-align: center;
+    border-top: 3px solid var(--primary-color);
+}
+
+footer h5 {
+    font-weight: 700;
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+}

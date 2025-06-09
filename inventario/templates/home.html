@@ -1,0 +1,466 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Auto Partes McQueen - Inicio{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<div class="container my-4">
+    <div class="hero-section">
+        <div class="hero-content">
+            <div class="hero-icon">
+                <i class="fas fa-bolt"></i>
+            </div>
+            <h1>¡Ka-Chow!</h1>
+            <p class="lead">Las mejores refacciones para tu vehículo con la velocidad del Rayo McQueen</p>
+        </div>
+    </div>
+</div>
+
+<div class="container py-5">
+    <!-- Categorías Destacadas -->
+    <section class="featured-categories mb-5">
+        <div class="section-header text-center mb-5">
+            <span class="section-badge">Nuestro Catálogo</span>
+            <h2 class="section-title">Categorías Destacadas</h2>
+            <p class="section-subtitle">Encuentra todo lo que necesitas para tu vehículo con la mejor calidad y garantía
+            </p>
+        </div>
+        <div class="row g-4">
+            <div class="col-md-3">
+                <div class="categoria-card">
+                    <div class="categoria-icon-wrapper">
+                        <div class="categoria-icon">
+                            <i class="fas fa-dharmachakra"></i>
+                        </div>
+                    </div>
+                    <h3>Llantas</h3>
+                    <p>Las mejores marcas en llantas para todo tipo de vehículos</p>
+                    <a href="" class="btn btn-outline-primary">
+                        Ver productos <i class="fas fa-arrow-right ms-2"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="categoria-card">
+                    <div class="categoria-icon-wrapper">
+                        <div class="categoria-icon">
+                            <i class="fas fa-oil-can"></i>
+                        </div>
+                    </div>
+                    <h3>Lubricantes</h3>
+                    <p>Aceites y lubricantes de la más alta calidad</p>
+                    <a href=""
+                        class="btn btn-outline-primary">
+                        Ver productos <i class="fas fa-arrow-right ms-2"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="categoria-card">
+                    <div class="categoria-icon-wrapper">
+                        <div class="categoria-icon">
+                            <i class="fas fa-car-battery"></i>
+                        </div>
+                    </div>
+                    <h3>Baterías</h3>
+                    <p>Energía confiable para mantener tu auto en marcha</p>
+                    <a href="" class="btn btn-outline-primary">
+                        Ver productos <i class="fas fa-arrow-right ms-2"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="categoria-card">
+                    <div class="categoria-icon-wrapper">
+                        <div class="categoria-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                    </div>
+                    <h3>Herramientas</h3>
+                    <p>Todo lo necesario para el mantenimiento</p>
+                    <a href=""
+                        class="btn btn-outline-primary">
+                        Ver productos <i class="fas fa-arrow-right ms-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-5">
+            <a href="" class="btn btn-primary btn-lg">
+                <i class="fas fa-th-list me-2"></i> Ver todas las categorías
+            </a>
+        </div>
+    </section>
+
+    <!-- Tips de Mantenimiento -->
+    <section class="tips-section">
+        <div class="section-header text-center mb-5">
+            <span class="section-badge">Consejos Expertos</span>
+            <h2 class="section-title">Tips de Mantenimiento</h2>
+            <p class="section-subtitle">Mantén tu vehículo en óptimas condiciones con nuestros consejos profesionales
+            </p>
+        </div>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="tip-card" data-bs-toggle="modal" data-bs-target="#tipModal1" tabindex="0" role="button">
+                    <div class="tip-icon-wrapper">
+                        <div class="tip-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                    </div>
+                    <h3>Mantenimiento Básico</h3>
+                    <p>Consejos esenciales para el cuidado diario de tu vehículo</p>
+                    <span class="tip-link">Ver detalles <i class="fas fa-arrow-right"></i></span>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="tip-card" data-bs-toggle="modal" data-bs-target="#tipModal2" tabindex="0" role="button">
+                    <div class="tip-icon-wrapper">
+                        <div class="tip-icon">
+                            <i class="fas fa-tachometer-alt"></i>
+                        </div>
+                    </div>
+                    <h3>Rendimiento</h3>
+                    <p>Optimiza el desempeño y eficiencia de tu auto</p>
+                    <span class="tip-link">Ver detalles <i class="fas fa-arrow-right"></i></span>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="tip-card" data-bs-toggle="modal" data-bs-target="#tipModal3" tabindex="0" role="button">
+                    <div class="tip-icon-wrapper">
+                        <div class="tip-icon">
+                            <i class="fas fa-gas-pump"></i>
+                        </div>
+                    </div>
+                    <h3>Ahorro de Combustible</h3>
+                    <p>Tips efectivos para reducir el consumo de gasolina</p>
+                    <span class="tip-link">Ver detalles <i class="fas fa-arrow-right"></i></span>
+                </div>
+            </div>
+
+            <!-- Nuevos tips -->
+            <div class="col-md-4">
+                <div class="tip-card" data-bs-toggle="modal" data-bs-target="#tipModal4" tabindex="0" role="button">
+                    <div class="tip-icon-wrapper">
+                        <div class="tip-icon">
+                            <i class="fas fa-battery-full"></i>
+                        </div>
+                    </div>
+                    <h3>Cuidado de la Batería</h3>
+                    <p>Extiende la vida útil de tu batería con estos consejos simples</p>
+                    <span class="tip-link">Ver detalles <i class="fas fa-arrow-right"></i></span>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="tip-card" data-bs-toggle="modal" data-bs-target="#tipModal5" tabindex="0" role="button">
+                    <div class="tip-icon-wrapper">
+                        <div class="tip-icon">
+                            <i class="fas fa-tint"></i>
+                        </div>
+                    </div>
+                    <h3>Revisión de Líquidos</h3>
+                    <p>Mantén el nivel adecuado de todos los líquidos esenciales</p>
+                    <span class="tip-link">Ver detalles <i class="fas fa-arrow-right"></i></span>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="tip-card" data-bs-toggle="modal" data-bs-target="#tipModal6" tabindex="0" role="button">
+                    <div class="tip-icon-wrapper">
+                        <div class="tip-icon">
+                            <i class="fas fa-car-crash"></i>
+                        </div>
+                    </div>
+                    <h3>Seguridad Vial</h3>
+                    <p>Consejos para conducir seguro y evitar accidentes</p>
+                    <span class="tip-link">Ver detalles <i class="fas fa-arrow-right"></i></span>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- Modales para los Tips -->
+<div class="modal fade" id="tipModal1" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">
+                    <i class="fas fa-tools me-2"></i>
+                    Mantenimiento Básico
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="tip-content">
+                    <div class="tip-item">
+                        <i class="fas fa-check-circle"></i>
+                        <div>
+                            <h4>Revisa el aceite regularmente</h4>
+                            <p>Mantén el nivel de aceite adecuado y cámbialo según las especificaciones del fabricante.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="tip-item">
+                        <i class="fas fa-check-circle"></i>
+                        <div>
+                            <h4>Presión de llantas</h4>
+                            <p>Verifica mensualmente la presión de las llantas para un desgaste uniforme y mejor
+                                rendimiento.</p>
+                        </div>
+                    </div>
+                    <div class="tip-item">
+                        <i class="fas fa-check-circle"></i>
+                        <div>
+                            <h4>Filtros</h4>
+                            <p>Revisa y cambia los filtros de aire, aceite y combustible según el programa de
+                                mantenimiento.</p>
+                        </div>
+                    </div>
+                    <div class="tip-item">
+                        <i class="fas fa-check-circle"></i>
+                        <div>
+                            <h4>Líquidos</h4>
+                            <p>Mantén los niveles adecuados de refrigerante, líquido de frenos y dirección hidráulica.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="tipModal2" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">
+                    <i class="fas fa-tachometer-alt me-2"></i>
+                    Mejora el Rendimiento
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="tip-content">
+                    <div class="tip-item">
+                        <i class="fas fa-check-circle"></i>
+                        <div>
+                            <h4>Aceite adecuado</h4>
+                            <p>Utiliza el aceite recomendado por el fabricante para optimizar el rendimiento del motor.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="tip-item">
+                        <i class="fas fa-check-circle"></i>
+                        <div>
+                            <h4>Afinación regular</h4>
+                            <p>Realiza afinaciones periódicas para mantener el motor en óptimas condiciones.</p>
+                        </div>
+                    </div>
+                    <div class="tip-item">
+                        <i class="fas fa-check-circle"></i>
+                        <div>
+                            <h4>Sistema de inyección</h4>
+                            <p>Mantén los inyectores limpios para un mejor rendimiento y consumo de combustible.</p>
+                        </div>
+                    </div>
+                    <div class="tip-item">
+                        <i class="fas fa-check-circle"></i>
+                        <div>
+                            <h4>Peso del vehículo</h4>
+                            <p>Evita cargar peso innecesario que pueda afectar el rendimiento y consumo.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="tipModal3" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">
+                    <i class="fas fa-gas-pump me-2"></i>
+                    Ahorro de Combustible
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="tip-content">
+                    <div class="tip-item">
+                        <i class="fas fa-check-circle"></i>
+                        <div>
+                            <h4>Conducción eficiente</h4>
+                            <p>Evita aceleraciones bruscas y frenadas innecesarias para ahorrar combustible.</p>
+                        </div>
+                    </div>
+                    <div class="tip-item">
+                        <i class="fas fa-check-circle"></i>
+                        <div>
+                            <h4>Velocidad constante</h4>
+                            <p>Mantén una velocidad estable para optimizar el consumo.</p>
+                        </div>
+                    </div>
+                    <div class="tip-item">
+                        <i class="fas fa-check-circle"></i>
+                        <div>
+                            <h4>Revisión de llantas</h4>
+                            <p>Mantén la presión correcta para evitar gasto extra de combustible.</p>
+                        </div>
+                    </div>
+                    <div class="tip-item">
+                        <i class="fas fa-check-circle"></i>
+                        <div>
+                            <h4>Apaga el motor</h4>
+                            <p>Apaga el motor si vas a detenerte por más de un minuto.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Nuevos modales -->
+<div class="modal fade" id="tipModal4" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">
+                    <i class="fas fa-battery-full me-2"></i>
+                    Cuidado de la Batería
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="tip-content">
+                    <div class="tip-item">
+                        <i class="fas fa-check-circle"></i>
+                        <div>
+                            <h4>Revisión periódica</h4>
+                            <p>Verifica los bornes y limpia cualquier corrosión para evitar fallos.</p>
+                        </div>
+                    </div>
+                    <div class="tip-item">
+                        <i class="fas fa-check-circle"></i>
+                        <div>
+                            <h4>Carga correcta</h4>
+                            <p>Asegúrate de que la batería esté bien cargada y el alternador funcione correctamente.</p>
+                        </div>
+                    </div>
+                    <div class="tip-item">
+                        <i class="fas fa-check-circle"></i>
+                        <div>
+                            <h4>Evita descargas profundas</h4>
+                            <p>No dejes luces encendidas cuando el motor está apagado para no descargar la batería.</p>
+                        </div>
+                    </div>
+                    <div class="tip-item">
+                        <i class="fas fa-check-circle"></i>
+                        <div>
+                            <h4>Almacenamiento adecuado</h4>
+                            <p>Si no usarás el vehículo por tiempo prolongado, desconecta la batería.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="tipModal5" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">
+                    <i class="fas fa-tint me-2"></i>
+                    Revisión de Líquidos
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="tip-content">
+                    <div class="tip-item">
+                        <i class="fas fa-check-circle"></i>
+                        <div>
+                            <h4>Refrigerante</h4>
+                            <p>Mantén el nivel adecuado para evitar el sobrecalentamiento del motor.</p>
+                        </div>
+                    </div>
+                    <div class="tip-item">
+                        <i class="fas fa-check-circle"></i>
+                        <div>
+                            <h4>Liquido de frenos</h4>
+                            <p>Verifica periódicamente el nivel y estado para garantizar seguridad.</p>
+                        </div>
+                    </div>
+                    <div class="tip-item">
+                        <i class="fas fa-check-circle"></i>
+                        <div>
+                            <h4>Liquido de dirección hidráulica</h4>
+                            <p>Mantén el nivel recomendado para evitar daños en el sistema.</p>
+                        </div>
+                    </div>
+                    <div class="tip-item">
+                        <i class="fas fa-check-circle"></i>
+                        <div>
+                            <h4>Liquido limpiaparabrisas</h4>
+                            <p>Revisa y rellena para mantener la visibilidad óptima.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="tipModal6" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">
+                    <i class="fas fa-car-crash me-2"></i>
+                    Seguridad Vial
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="tip-content">
+                    <div class="tip-item">
+                        <i class="fas fa-check-circle"></i>
+                        <div>
+                            <h4>Respeta los límites de velocidad</h4>
+                            <p>Conduce siempre dentro de los límites establecidos para evitar accidentes.</p>
+                        </div>
+                    </div>
+                    <div class="tip-item">
+                        <i class="fas fa-check-circle"></i>
+                        <div>
+                            <h4>Uso del cinturón</h4>
+                            <p>Todos los ocupantes deben usar cinturón de seguridad en todo momento.</p>
+                        </div>
+                    </div>
+                    <div class="tip-item">
+                        <i class="fas fa-check-circle"></i>
+                        <div>
+                            <h4>Mantén la distancia</h4>
+                            <p>Guarda distancia segura para evitar colisiones.</p>
+                        </div>
+                    </div>
+                    <div class="tip-item">
+                        <i class="fas fa-check-circle"></i>
+                        <div>
+                            <h4>Evita distracciones</h4>
+                            <p>No uses el celular ni realices actividades que puedan desviar tu atención.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
