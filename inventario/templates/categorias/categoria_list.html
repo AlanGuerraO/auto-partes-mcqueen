@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Categorías - Auto Partes McQueen{% endblock %}
+
+{% block content %}
+<!-- Breadcrumb -->
+<nav aria-label="breadcrumb" class="mb-4">
+    <div class="container">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{% url 'home' %}">Inicio</a></li>
+            <li class="breadcrumb-item active">Categorías</li>
+        </ol>
+    </div>
+</nav>
+
+<div class="container">
+    <!-- Banner de Categorías -->
+    <div class="hero-section hero-section-small mb-5">
+        <div class="lightning"></div>
+        <div class="hero-content">
+            <div class="hero-icon">
+                <i class="fas fa-tags"></i>
+            </div>
+            <h1>Categorías</h1>
+            <p class="lead">Explora nuestra amplia selección de categorías y encuentra exactamente lo que necesitas</p>
+        </div>
+    </div>
+
+    {% if user.is_staff %}
+    <div class="mb-4 text-end">
+        <a href="" class="btn btn-primary">
+            <i class="fas fa-plus"></i> Nueva Categoría
+        </a>
+    </div>
+    {% endif %}
+
+    <!-- Lista de Categorías -->
+    <div class="row g-4">
+        {% for categoria in object_list %}
+        <div class="col-md-4">
+            <div class="categoria-card">
+                <div class="categoria-icon-wrapper">
+                    <div class="categoria-icon">
+                        {% if categoria.nombre|lower == 'lubricantes' %}
+                        <i class="fas fa-oil-can"></i>
+                        {% elif categoria.nombre|lower == 'llantas' %}
+                        <i class="fas fa-dharmachakra"></i>
+                        {% elif categoria.nombre|lower == 'herramientas' %}
+                        <i class="fas fa-tools"></i>
+                        {% elif categoria.nombre|lower == 'refacciones' %}
+                        <i class="fas fa-cogs"></i>
+                        {% elif categoria.nombre|lower == 'limpieza' %}
+                        <i class="fas fa-spray-can"></i>
+                        {% else %}
+                        <i class="fas fa-car-side"></i>
+                        {% endif %}
+                    </div>
+                </div>
+                <h3>{{ categoria.nombre }}</h3>
+                <p>{{ categoria.descripcion }}</p>
+                <div class="categoria-actions">
+                    <a href="" class="btn btn-outline-primary">
+                        <i class="fas fa-eye"></i> Ver detalles
+                    </a>
+                    {% if user.is_staff %}
+                    <div class="mt-3">
+                        <a href="" class="btn btn-warning btn-sm">
+                            <i class="fas fa-edit"></i> Editar
+                        </a>
+                        <a href="" class="btn btn-danger btn-sm">
+                            <i class="fas fa-trash"></i> Eliminar
+                        </a>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        {% empty %}
+        <div class="col-12">
+            <div class="alert alert-info text-center">
+                <i class="fas fa-info-circle me-2"></i> No se encontraron categorías.
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

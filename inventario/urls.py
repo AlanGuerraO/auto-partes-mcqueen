@@ -11,4 +11,7 @@ from . import views
 urlpatterns = [
     # URLs de inicio
     path('', views.HomeView.as_view(), name='home'),
+    
+    # URLs de Categorías
+    path('categorias/', views.CategoriaListView.as_view(), name='categoria-list'),
 ] 
