@@ -50,3 +50,20 @@ class ProductoListView(ListView):
 class ProductoDetailView(DetailView):
     model = Productos
     template_name = 'productos/producto_detail.html'
+
+class ProductoCreateView(CreateView):
+    model = Productos
+    template_name = 'productos/producto_form.html'
+    fields = '__all__'
+    success_url = reverse_lazy('producto-list')
+
+class ProductoUpdateView(UpdateView):
+    model = Productos
+    template_name = 'productos/producto_form.html'
+    fields = '__all__'
+    success_url = reverse_lazy('producto-list')
+
+class ProductoDeleteView(DeleteView):
+    model = Productos
+    template_name = 'productos/producto_confirm_delete.html'
+    success_url = reverse_lazy('producto-list')

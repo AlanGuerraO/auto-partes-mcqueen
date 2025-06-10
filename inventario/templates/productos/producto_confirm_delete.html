@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+{% block title %}Eliminar {{ object.nombre }} - Auto Partes McQueen{% endblock %}
+
+{% block content %}
+<div class="container">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{% url 'home' %}">Inicio</a></li>
+            {% if object.marca %}
+            <li class="breadcrumb-item"><a href="">Marcas</a></li>
+            <li class="breadcrumb-item"><a href="">{{object.marca.nombre }}</a></li>
+            {% else %}
+            <li class="breadcrumb-item"><a href="{% url 'categoria-list' %}">Categorías</a></li>
+            <li class="breadcrumb-item"><a href="{% url 'categoria-detail' object.categoria.pk %}">{{
+                    object.categoria.nombre }}</a></li>
+            {% endif %}
+            <li class="breadcrumb-item active">Eliminar {{ object.nombre }}</li>
+        </ol>
+    </nav>
+
+    <div class="form-container">
+        <div class="text-center mb-4">
+            {% if object.imagen %}
+            <img src="{{ object.imagen.url }}" alt="{{ object.nombre }}" class="img-fluid mb-3"
+                style="max-height: 200px;">
+            {% else %}
+            <i class="fas fa-box" style="font-size: 4rem; color: var(--mcqueen-red);"></i>
+            {% endif %}
+            <h2 class="text-danger">
+                <i class="fas fa-exclamation-triangle"></i> Eliminar Producto
+            </h2>
+        </div>
+
+        <div class="alert alert-warning">
+            <p class="mb-0">
+                <i class="fas fa-exclamation-circle"></i>
+                ¿Estás seguro de que deseas eliminar el producto <strong>{{ object.nombre }}</strong>?
+                Esta acción no se puede deshacer.
+            </p>
+        </div>
+
+        <form method="post">
+            {% csrf_token %}
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                {% if object.marca %}
+                <a href="" class="btn btn-secondary me-md-2">
+                    <i class="fas fa-times"></i> Cancelar
+                </a>
+                {% else %}
+                <a href="{% url 'categoria-detail' object.categoria.pk %}" class="btn btn-secondary me-md-2">
+                    <i class="fas fa-times"></i> Cancelar
+                </a>
+                {% endif %}
+                <button type="submit" class="btn btn-danger">
+                    <i class="fas fa-trash"></i> Eliminar
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}
