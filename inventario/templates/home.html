@@ -36,7 +36,7 @@
                     </div>
                     <h3>Llantas</h3>
                     <p>Las mejores marcas en llantas para todo tipo de vehículos</p>
-                    <a href="" class="btn btn-outline-primary">
+                    <a href="{% url 'categoria-detail' 2 %}" class="btn btn-outline-primary">
                         Ver productos <i class="fas fa-arrow-right ms-2"></i>
                     </a>
                 </div>
@@ -50,7 +50,7 @@
                     </div>
                     <h3>Lubricantes</h3>
                     <p>Aceites y lubricantes de la más alta calidad</p>
-                    <a href=""
+                    <a href="{% url 'categoria-detail' 1 %}"
                         class="btn btn-outline-primary">
                         Ver productos <i class="fas fa-arrow-right ms-2"></i>
                     </a>
@@ -60,12 +60,12 @@
                 <div class="categoria-card">
                     <div class="categoria-icon-wrapper">
                         <div class="categoria-icon">
-                            <i class="fas fa-car-battery"></i>
+                            <i class="fas fa-spray-can"></i>
                         </div>
                     </div>
-                    <h3>Baterías</h3>
-                    <p>Energía confiable para mantener tu auto en marcha</p>
-                    <a href="" class="btn btn-outline-primary">
+                    <h3>Limpieza</h3>
+                    <p>Productos para mantener tu auto limpio</p>
+                    <a href="{% url 'categoria-detail' 5 %}" class="btn btn-outline-primary">
                         Ver productos <i class="fas fa-arrow-right ms-2"></i>
                     </a>
                 </div>
@@ -79,7 +79,7 @@
                     </div>
                     <h3>Herramientas</h3>
                     <p>Todo lo necesario para el mantenimiento</p>
-                    <a href=""
+                    <a href="{% url 'categoria-detail' 3 %}"
                         class="btn btn-outline-primary">
                         Ver productos <i class="fas fa-arrow-right ms-2"></i>
                     </a>
@@ -138,8 +138,6 @@
                     <span class="tip-link">Ver detalles <i class="fas fa-arrow-right"></i></span>
                 </div>
             </div>
-
-            <!-- Nuevos tips -->
             <div class="col-md-4">
                 <div class="tip-card" data-bs-toggle="modal" data-bs-target="#tipModal4" tabindex="0" role="button">
                     <div class="tip-icon-wrapper">
@@ -324,7 +322,6 @@
     </div>
 </div>
 
-<!-- Nuevos modales -->
 <div class="modal fade" id="tipModal4" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">

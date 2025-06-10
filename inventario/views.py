@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView, DetailView, TemplateView
 from .models import Categorias, Productos, Marcas
+from django.urls import reverse_lazy, reverse
 
 # Create your views here.
 
@@ -11,3 +12,12 @@ class CategoriaListView(ListView):
     model = Categorias
     template_name = 'categorias/categoria_list.html'
     context_object_name = 'object_list'
+
+class CategoriaDetailView(DetailView):
+    model = Categorias
+    template_name = 'categorias/categoria_detail.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['productos'] = self.object.productos.all()
+        return context

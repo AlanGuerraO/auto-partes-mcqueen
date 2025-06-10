@@ -155,7 +155,7 @@ main {
     background: var(--mcqueen-white);
     border-radius: 20px;
     padding: 2rem;
-    height: 100%;
+    height: auto;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     box-shadow: 0 5px 15px var(--mcqueen-shadow);
     display: flex;
@@ -287,6 +287,126 @@ main {
 .btn-sm {
     padding: 0.5rem 1rem;
     font-size: 0.875rem;
+}
+
+/* Breadcrumb */
+.breadcrumb {
+    background: transparent;
+    padding: 1rem 0;
+    margin-bottom: 2rem;
+}
+
+.breadcrumb-item a {
+    color: var(--mcqueen-red);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.breadcrumb-item a:hover {
+    color: #c41530;
+}
+
+/* Card de Producto */
+.producto-card {
+    background: var(--mcqueen-white);
+    border-radius: 20px;
+    box-shadow: 0 5px 15px var(--mcqueen-shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1.5rem;
+    height: 100%;
+    max-width: 280px;
+    margin: 0 auto;
+}
+
+.producto-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Icono circular reducido */
+.producto-card i.fas.fa-box,
+.card.categoria-card i.fas.fa-boxes {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 170px;
+    height: 170px;
+    background: linear-gradient(135deg, var(--primary-color) 0%, #a02e38 100%);
+    color: var(--mcqueen-white);
+    border-radius: 50%;
+    font-size: 5rem !important;
+    box-shadow: 0 4px 10px var(--mcqueen-shadow);
+    margin-bottom: 1rem;
+}
+
+/* Imagen del producto */
+.producto-img-container {
+    width: 100%;
+    max-height: 160px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.producto-img {
+    max-height: 100%;
+    width: auto;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+/* Título y descripción */
+.producto-card h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.producto-card p {
+    font-size: 0.95rem;
+    color: #444;
+    margin: 0;
+}
+
+/* Badges de Precio y Stock */
+.badges-container {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 1rem 0;
+    flex-wrap: wrap;
+}
+
+.badge-precio {
+    background-color: var(--mcqueen-red);
+    color: white;
+    padding: 0.4rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+}
+
+.badge-stock {
+    background-color: var(--dinoco-blue);
+    color: white;
+    padding: 0.4rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+}
+
+/* Botón */
+.producto-card .btn {
+    font-size: 0.85rem;
+    padding: 0.4rem 0.75rem;
+    border-radius: 20px;
+    margin-top: 0.5rem;
+    width: 100%;
 }
 
 /* Footer */
