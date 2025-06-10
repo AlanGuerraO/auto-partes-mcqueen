@@ -54,7 +54,7 @@
             {% if productos %}
             <div class="productos-grid">
                 {% for producto in productos %}
-                <a href="#" class="text-decoration-none">
+                <a href="{% url 'producto-detail' producto.pk %}" class="text-decoration-none">
                     <div class="producto-card card">
                         <div class="card-body d-flex flex-column h-100">
                             {% if producto.imagen %}

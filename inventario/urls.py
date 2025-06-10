@@ -18,4 +18,8 @@ urlpatterns = [
     path('categoria/crear/', views.CategoriaCreateView.as_view(), name='categoria-create'),
     path('categoria/<int:pk>/editar/', views.CategoriaUpdateView.as_view(), name='categoria-update'),
     path('categoria/<int:pk>/eliminar/', views.CategoriaDeleteView.as_view(), name='categoria-delete'),
+    
+    # URLs de Productos
+    path('productos/', views.ProductoListView.as_view(), name='producto-list'),
+    path('producto/<int:pk>/', views.ProductoDetailView.as_view(), name='producto-detail'),
 ] 

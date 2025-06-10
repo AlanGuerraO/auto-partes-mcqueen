@@ -1,0 +1,116 @@
+{% extends 'base.html' %}
+
+{# Título de la página #}
+{% block title %}{{ object.nombre }} - Auto Partes McQueen{% endblock %}
+
+{% block content %}
+{# Contenedor principal de la página #}
+<div class="content-wrapper">
+    {# Navegación de migas de pan #}
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{% url 'home' %}">Inicio</a></li>
+            {# Enlaces de navegación para categoría si existe #}
+            {% if object.categoria %}
+            <li class="breadcrumb-item"><a href="{% url 'categoria-list' %}">Categorías</a></li>
+            <li class="breadcrumb-item"><a href="{% url 'categoria-detail' object.categoria.pk %}">{{ object.categoria.nombre }}</a></li>
+            {% endif %}
+            {# Enlaces de navegación para marca si existe #}
+            {% if object.marca %}
+            <li class="breadcrumb-item"><a href="">Marcas</a></li>
+            <li class="breadcrumb-item"><a href="">{{ object.marca.nombre }}</a></li>
+            {% endif %}
+            <li class="breadcrumb-item active">{{ object.nombre }}</li>
+        </ol>
+    </nav>
+
+    {# Sección principal del detalle del producto #}
+    <div class="producto-detail">
+        <div class="content-section">
+            {# Título del producto #}
+            <h1 class="section-title">{{ object.nombre }}</h1>
+
+            {# Contenedor del contenido principal del producto #}
+            <div class="producto-detail-content">
+                {# Sección de imagen del producto #}
+                <div class="producto-detail-image">
+                    {% if object.imagen %}
+                    <div class="producto-img-container h-100">
+                        <img src="{{ object.imagen.url }}" alt="{{ object.nombre }}" class="producto-img">
+                    </div>
+                    {% else %}
+                    {# Icono por defecto cuando no hay imagen #}
+                    <div class="h-100 d-flex align-items-center justify-content-center">
+                        <i class="fas fa-box categoria-icon" style="font-size: 5rem;"></i>
+                    </div>
+                    {% endif %}
+                </div>
+
+                {# Sección de información del producto #}
+                <div class="producto-detail-info">
+                    {# Descripción del producto #}
+                    <div class="mb-4">
+                        <h2 class="subsection-title">Descripción</h2>
+                        <p>{{ object.descripcion }}</p>
+                    </div>
+
+                    {# Detalles de categoría y marca #}
+                    <div class="mb-4">
+                        <h2 class="subsection-title">Detalles</h2>
+                        {% if object.categoria %}
+                        <p class="mb-2">
+                            <strong>Categoría:</strong>
+                            <a href="{% url 'categoria-detail' object.categoria.pk %}">
+                                {{ object.categoria.nombre }}
+                            </a>
+                        </p>
+                        {% endif %}
+                        {% if object.marca %}
+                        <p class="mb-2">
+                            <strong>Marca:</strong>
+                            <a href="">
+                                {{ object.marca.nombre }}
+                            </a>
+                        </p>
+                        {% endif %}
+                    </div>
+
+                    {# Sección de precio y disponibilidad #}
+                    <div class="precio-stock mb-4">
+                        <h2 class="subsection-title">Precio y Disponibilidad</h2>
+                        <div class="d-flex gap-3">
+                            {# Indicador de precio #}
+                            <div class="badge badge-precio">
+                                <i class="fas fa-tag"></i> ${{ object.precio }}
+                            </div>
+                            {# Indicador de stock #}
+                            <div class="badge badge-stock">
+                                <i class="fas fa-boxes"></i> Stock: {{ object.stock }}
+                            </div>
+                        </div>
+                    </div>
+
+                    {# Sección de acciones administrativas #}
+                    {% if user.is_staff %}
+                    <div class="admin-section">
+                        <h2 class="subsection-title">Acciones de Administrador</h2>
+                        <div class="d-flex gap-2">
+                            {# Botón de edición #}
+                            <a href=""
+                                class="btn btn-warning flex-grow-1">
+                                <i class="fas fa-edit"></i> Editar Producto
+                            </a>
+                            {# Botón de eliminación #}
+                            <a href=""
+                                class="btn btn-danger flex-grow-1">
+                                <i class="fas fa-trash"></i> Eliminar Producto
+                            </a>
+                        </div>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
