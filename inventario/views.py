@@ -21,3 +21,20 @@ class CategoriaDetailView(DetailView):
         context = super().get_context_data(**kwargs)
         context['productos'] = self.object.productos.all()
         return context
+
+class CategoriaCreateView(CreateView):
+    model = Categorias
+    template_name = 'categorias/categoria_form.html'
+    fields = '__all__'
+    success_url = reverse_lazy('categoria-list')
+
+class CategoriaUpdateView(UpdateView):
+    model = Categorias
+    template_name = 'categorias/categoria_form.html'
+    fields = '__all__'
+    success_url = reverse_lazy('categoria-list')
+
+class CategoriaDeleteView(DeleteView):
+    model = Categorias
+    template_name = 'categorias/categoria_confirm_delete.html'
+    success_url = reverse_lazy('categoria-list')

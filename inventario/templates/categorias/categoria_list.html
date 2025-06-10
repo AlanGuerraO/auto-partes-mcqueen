@@ -29,7 +29,7 @@
 
     {% if user.is_staff %}
     <div class="mb-4 text-end">
-        <a href="" class="btn btn-primary">
+        <a href="{% url 'categoria-create' %}" class="btn btn-primary">
             <i class="fas fa-plus"></i> Nueva Categoría
         </a>
     </div>
@@ -65,10 +65,10 @@
                     </a>
                     {% if user.is_staff %}
                     <div class="mt-3">
-                        <a href="" class="btn btn-warning btn-sm">
+                        <a href="{% url 'categoria-update' categoria.pk %}" class="btn btn-warning btn-sm">
                             <i class="fas fa-edit"></i> Editar
                         </a>
-                        <a href="" class="btn btn-danger btn-sm">
+                        <a href="{% url 'categoria-delete' categoria.pk %}" class="btn btn-danger btn-sm">
                             <i class="fas fa-trash"></i> Eliminar
                         </a>
                     </div>

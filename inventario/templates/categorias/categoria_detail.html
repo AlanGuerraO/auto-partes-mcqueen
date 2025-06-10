@@ -28,10 +28,10 @@
                     <h2 class="card-title">{{ object.nombre }}</h2>
                     {% if user.is_staff %}
                     <div class="mt-3 d-flex justify-content-center gap-2">
-                        <a href="#" class="btn btn-warning">
+                        <a href="{% url 'categoria-update' object.pk %}" class="btn btn-warning">
                             <i class="fas fa-edit"></i> Editar
                         </a>
-                        <a href="#" class="btn btn-danger">
+                        <a href="{% url 'categoria-delete' object.pk %}" class="btn btn-danger">
                             <i class="fas fa-trash"></i> Eliminar
                         </a>
                     </div>
